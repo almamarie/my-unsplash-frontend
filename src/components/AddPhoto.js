@@ -1,5 +1,6 @@
 import styles from "./AddPhoto.module.css";
 import Button from "./UI/Button/Button";
+import CancelButton from "./UI/Button/CancelButton";
 import Card from "./UI/Card/Card";
 import Input from "./UI/Input/Input";
 
@@ -26,12 +27,7 @@ const AddPhoto = (props) => {
         <Input {...urlDetails} />
       </div>
       <div className={styles.actions}>
-        <Button
-          type="text"
-          class="cancel"
-          content="Cancel"
-          onClick={props.onCancel}
-        />
+        <CancelButton type="text" content="Cancel" onClick={props.onCancel} />
         <Button type="text" content="Submit" />
       </div>
     </Card>
