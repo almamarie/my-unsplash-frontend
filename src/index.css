@@ -7,6 +7,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  box-sizing: border-box;
   background-color: #fff;
   color: #333;
   /* position: relative; */
@@ -16,8 +17,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Noto Sans";
 }
 
 html {
