@@ -10,6 +10,7 @@ const Input = (props) => {
         className={styles.input}
         type={props.type}
         id={props.name}
+        onChange={props.onChange}
         placeholder={props.placeholder}
       />
     </div>
