@@ -6,34 +6,14 @@ import styles from "./ImageView.module.css";
 import { useSelector } from "react-redux";
 
 const generateImages = (fileUrls) => {
-  // const finalList = [];
-  // // take the 3
-  // let divider = 0;
-  // while (divider < fileUrls.length) {
-  //   // take the next 3 files
-  //   const slicedData = fileUrls.slice(divider, divider + 3);
-
-  //   // map them to the singleimage component
-  //   const mappedData = slicedData.map((fileUrl, index) => {
-  //     return <SingleImage urlData={fileUrl} key={index} />;
-  //   });
-
-  //   // add it to the finalList list
-  //   finalList.push(
-  //     <div key={divider} className={styles["flex-element"]}>
-  //       {mappedData}
-  //     </div>
-  //   );
-
-  //   divider += 3;
-  // }
-
-  // console.log("Final list: ", finalList);
-
-  // return finalList;
-
   return fileUrls.map((fileUrl, index) => {
-    return <SingleImage urlData={fileUrl} key={index} className={styles['single-image']} />;
+    return (
+      <SingleImage
+        urlData={fileUrl}
+        key={index}
+        className={styles["single-image"]}
+      />
+    );
   });
 };
 

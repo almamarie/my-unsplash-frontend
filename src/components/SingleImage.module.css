@@ -19,11 +19,18 @@
   font-weight: 700;
   color: #fff;
 
+  width: 85%;
+  height: 2rem;
+
   position: absolute;
   left: 2.404rem;
   bottom: 2rem;
 
   background-color: #222;
+
+  /* truncate  */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .hide {
