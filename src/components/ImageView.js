@@ -1,35 +1,50 @@
-import { useState } from "react";
-import styles from "./ImageView.module.css";
-import DeleteButton from "./UI/Button/DeleteButton";
-import Modal from "./UI/Modal/Modal";
+// import { useEffect, useState } from "react";
+// import { fetchUrlData } from "../lib/api";
+// import SingleImage from "./SingleImage";
+// import styles from "./ImageView.module.css";
+
+// const generateImages = (fileUrls) => {
+//   return fileUrls.map((fileUrl, index) => {
+//     return <SingleImage urlData={fileUrl} key={index} />;
+//   });
+// };
 
 const ImageView = (props) => {
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
-  return (
-    <>
-      {showDeleteModal && (
-        <Modal
-          onClose={() => {
-            setShowDeleteModal(false);
-          }}
-        >
-          Delete here
-        </Modal>
-      )}
-      <div
-        className={styles.wrapper}
-        style={{
-          backgroundImage:
-            "url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fbeautiful%2F&psig=AOvVaw3-WJaIk5gjbGVeExYjKJ4_&ust=1670964318831000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNCj_qb59PsCFQAAAAAdAAAAABAE')",
-        }}
-      >
-        <DeleteButton
-          onDelete={() => {
-            setShowDeleteModal(true);
-          }}
-        />
-      </div>
-    </>
-  );
+  // const [fetchedData, setFetchedData] = useState(false);
+  // const [data, setData] = useState({});
+
+  // useEffect(() => {
+  //   if (fetchedData) return;
+  //   async function getAllUrlData() {
+  //     await fetchUrlData().then((data) => {
+  //       setData(data);
+  //       console.log(data);
+  //     });
+  //   }
+  //   setFetchedData(false);
+  //   getAllUrlData();
+  //   setFetchedData(true);
+  // }, [fetchedData]);
+
+  // const generateReturnValue = () => {
+  //   // if data has been fetched successfully
+  //   if (fetchedData && data.success) {
+  //     return generateImages(data.data);
+  //   }
+
+  //   // if tried fetching data but an error occured
+  //   if (fetchedData && !data.success) {
+  //     return <p>An error occured. Please try again</p>;
+  //   }
+
+  //   // if data has not been fetch yet
+  //   if (!fetchedData) {
+  //     return <p>No images found</p>;
+  //   }
+  // };
+
+  return <p>Wiating...</p>;
+
+  // return <div className={styles.wrapper}>{generateReturnValue()}</div>;
 };
 export default ImageView;

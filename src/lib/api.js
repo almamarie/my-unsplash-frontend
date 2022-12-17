@@ -17,3 +17,15 @@ export const createNewPhoto = async (photoDetails) => {
     return { success: false };
   }
 };
+
+export async function fetchUrlData() {
+  const url = API_BASE_URL + "/all-file-data";
+  try {
+    const data = await AJAX(url);
+
+    return data;
+  } catch (error) {
+    console.error("failed to fetch data: ", error);
+    return { success: false };
+  }
+}

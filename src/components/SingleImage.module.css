@@ -1,0 +1,31 @@
+.wrapper {
+    width: 38.287rem;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+  .img {
+    width: 100%;
+  }
+  
+  .delete-button {
+    position: absolute;
+    top: 1.8rem;
+    right: 1.8rem;
+  }
+  
+  .label {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+  
+    position: absolute;
+    left: 2.404rem;
+    bottom: 2rem;
+  }
+  
+  .hide {
+    display: none;
+    visibility: hidden;
+  }
+  
