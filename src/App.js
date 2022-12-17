@@ -11,13 +11,11 @@ function App() {
   const dispatch = useDispatch();
   const loadingFlag = useSelector((state) => state.ui.loading);
 
-  console.log("Loading: ", loadingFlag);
-
   useEffect(() => {
     dispatch(fetchAllData());
   }, [dispatch]);
   return (
-    <div className="App">
+    <div className={styles.App}>
       <Header />
       <div className={"middle-part"}>
         {loadingFlag ? (

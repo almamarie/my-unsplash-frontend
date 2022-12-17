@@ -4,21 +4,18 @@ import DeleteButton from "./UI/Button/DeleteButton";
 import Modal from "./UI/Modal/Modal";
 
 const SingleImage = (props) => {
+  const data = props.urlData;
+
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [hover, setHover] = useState(false);
 
+  // set the classes of the label and delete buttons
   const labelClasses = !hover
     ? `${styles.label} ${styles.hide}`
     : `${styles.label}`;
   const deleteClasses = !hover
     ? `${styles["delete-button"]} ${styles.hide}`
     : `${styles["delete-button"]}`;
-
-  console.log(props.data);
-
-  // const label = "label goes here";
-  // const imgUrl =
-  //   "https://burst.shopifycdn.com/photos/person-holds-a-book-over-a-stack-and-turns-the-page.jpg?width=1200&format=pjpg&exif=0&iptc=0";
 
   return (
     <>
@@ -37,22 +34,18 @@ const SingleImage = (props) => {
         onMouseEnter={(event) => {
           setHover(true);
         }}
-        onMouseOut={(event) => {
+        onMouseLeave={(event) => {
           setHover(false);
         }}
       >
-        <img
-          className={styles.img}
-          alt={props.data.label}
-          src={props.data.url}
-        />
+        <img className={styles.img} alt={data.label} src={data.url} />
         <DeleteButton
           className={deleteClasses}
           onDelete={() => {
             setShowDeleteModal(true);
           }}
         />
-        <p className={labelClasses}>{props.data.label}</p>
+        <p className={labelClasses}>{data.label}</p>
       </div>
     </>
   );

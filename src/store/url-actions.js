@@ -18,9 +18,6 @@ export const fetchAllData = () => {
         })
       );
 
-      // set updateDoneFetchingUriData to true
-      dispatch(uiActions.updateDoneFetchingUriData(true));
-
       // set fetching data error to false
       dispatch(uiActions.setFetchDataError(false));
     } catch (error) {

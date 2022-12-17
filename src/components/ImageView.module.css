@@ -1,4 +1,33 @@
 .wrapper {
   margin-top: 7.576rem;
+
+  /* code to create the masonry effect */
+  columns: 3;
+  column-gap: 4.563rem;
 }
 
+.normal-text,
+.error-text {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding-top: 5rem;
+  border-top: 1px solid red;
+}
+
+.normal-text {
+  color: #3db46d;
+}
+
+.error-text {
+  color: #eb5757;
+}
+
+.flex-element {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-image {
+  break-inside: avoid;
+}

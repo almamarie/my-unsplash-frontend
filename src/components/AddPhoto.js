@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import { createNewPhoto } from "../lib/api";
+import { fetchAllData } from "../store/url-actions";
 import styles from "./AddPhoto.module.css";
 import Button from "./UI/Button/Button";
 import SubmitButton from "./UI/Button/SubmitButton";
@@ -21,6 +23,7 @@ const urlDetails = {
 };
 
 const AddPhoto = (props) => {
+  const dispatch = useDispatch();
   const formRef = useRef();
   const [label, setLabel] = useState("");
   const [url, setUrl] = useState("");
@@ -35,6 +38,8 @@ const AddPhoto = (props) => {
 
     const response = await createNewPhoto(data);
     if (response.success) {
+      dispatch(fetchAllData());
+
       props.onCancel();
     } else {
       setErrorText("an error occured. please try again");
