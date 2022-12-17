@@ -1,7 +1,11 @@
 // import { useEffect, useState } from "react";
 // import { fetchUrlData } from "../lib/api";
 // import SingleImage from "./SingleImage";
-// import styles from "./ImageView.module.css";
+import styles from "./ImageView.module.css";
+
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import Spinner from "./UI/LoadingSpinner/Spinner";
 
 // const generateImages = (fileUrls) => {
 //   return fileUrls.map((fileUrl, index) => {
@@ -10,6 +14,15 @@
 // };
 
 const ImageView = (props) => {
+  const data = useSelector((state) => state.uri);
+  const doneFetchingUriData = useSelector(
+    (state) => state.ui.doneFetchingUriData
+  );
+  const fetchingDataError = useSelector((state) => state.ui.fetchingDataError);
+
+  console.log(fetchingDataError);
+
+  return <p>Done here oo.</p>;
   // const [fetchedData, setFetchedData] = useState(false);
   // const [data, setData] = useState({});
 
@@ -42,8 +55,6 @@ const ImageView = (props) => {
   //     return <p>No images found</p>;
   //   }
   // };
-
-  return <p>Wiating...</p>;
 
   // return <div className={styles.wrapper}>{generateReturnValue()}</div>;
 };

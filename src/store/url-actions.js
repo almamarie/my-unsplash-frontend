@@ -5,6 +5,8 @@ import { uriActions } from "./url-slice";
 export const fetchAllData = () => {
   return async (dispatch) => {
     try {
+      // set the loading flag to true
+      dispatch(uiActions.setLoadingTrue());
       // fetch the data from the backend
       const uriData = await fetchUrlData();
 
@@ -12,7 +14,7 @@ export const fetchAllData = () => {
       dispatch(
         uriActions.initializeUriData({
           items: uriData.items || [],
-          totalQuantity: uriData.totalNumber || 0,
+          totalNumber: uriData.totalNumber || 0,
         })
       );
 
@@ -26,5 +28,7 @@ export const fetchAllData = () => {
       console.log(error);
       dispatch(uiActions.setFetchDataError(true));
     }
+
+    dispatch(uiActions.setLoadingFalse());
   };
 };

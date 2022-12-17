@@ -5,6 +5,7 @@ const uiSlice = createSlice({
   initialState: {
     doneFetchingUriData: false,
     fetchingDataError: undefined,
+    loading: false,
   },
 
   reducers: {
@@ -14,6 +15,14 @@ const uiSlice = createSlice({
 
     setFetchDataError(state, action) {
       state.fetchingDataError = action.payload;
+    },
+
+    setLoadingTrue(state) {
+      state.loading = true;
+    },
+
+    setLoadingFalse(state) {
+      state.loading = false;
     },
   },
 });
